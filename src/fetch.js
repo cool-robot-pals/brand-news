@@ -17,7 +17,7 @@ const sources = [
     'http://www.kerrang.com/feed/',
 ];
 
-const fetch = () => {
+const fetchPosts = () => {
 
 	let edition = random(sources);
 
@@ -44,4 +44,4 @@ const fetch = () => {
 };
 
 
-module.exports = fetch;
+module.exports = fetchPosts;
