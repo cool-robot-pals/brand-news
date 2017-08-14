@@ -1,0 +1,15 @@
+{
+  "name": "brand-news",
+  "version": "1.0.0",
+  "description": "bad twitter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lau mayhem",
+  "license": "ISC",
+  "dependencies": {
+    "feed-read": "0.0.1",
+    "twitter": "^1.7.1"
+  }
+}
