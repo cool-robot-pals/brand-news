@@ -3,6 +3,7 @@
 const fetchPosts = require('./src/fetch.js');
 const env = require('./env.js');
 const Twitter = require('twitter');
+const chalk = require('chalk');
 
 const random = (items) => items[Math.floor(Math.random()*items.length)];
 
@@ -14,9 +15,16 @@ const client = new Twitter({
 });
 
 fetchPosts().then(headlines => {
-	client.post('statuses/update', {status: random(headlines)},  function(error, tweet, response) {
-		if(error) throw error;
-		console.log(tweet);  // Tweet body.
-		console.log(response);  // Raw response object.
+    const status = random(headlines);
+	client.post('statuses/update', {status: status},  function(error, tweet, response) {
+		if(error) {
+            console.error(chalk.red(`✘ Post failed`))
+            console.error(error);
+            console.error(headlines);
+            throw error;
+        }
+        else {
+            console.info(chalk.green(`✔ Posted: ${status}`))
+        }
 	});
 });

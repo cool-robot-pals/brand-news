@@ -10,12 +10,7 @@ const questionReplacers = [
 	'$1 And Why That’s a Big Opportunity for Brands'
 ];
 const sources = [
-	'http://rss.cnn.com/rss/edition.rss',
-	'http://www.vice.com/en_us/rss',
-	'https://www.vox.com/rss/index.xml',
-	'http://kotaku.com/rss',
-	'http://www.kerrang.com/feed/',
-	'https://www.citylab.com/feeds/posts/',
+	'http://www.kerrang.com/feed//',
 ];
 
 const fetchPosts = () => {

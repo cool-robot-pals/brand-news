@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.1.1",
+    "chalk": "^2.1.0",
     "eslint": "^4.4.1",
     "feed-read": "0.0.1",
     "mocha": "^3.5.0",
