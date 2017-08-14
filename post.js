@@ -11,7 +11,7 @@ const client = new Twitter({
     access_token_secret: env.twitterSecret
 });
 
-fetchPosts('http://rss.cnn.com/rss/edition.rss').then(headlines => {
+fetchPosts().then(headlines => {
     client.post('statuses/update', {status: random(headlines)},  function(error, tweet, response) {
         if(error) throw error;
         console.log(tweet);  // Tweet body.
