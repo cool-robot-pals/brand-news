@@ -15,16 +15,16 @@ const client = new Twitter({
 });
 
 fetchPosts().then(headlines => {
-    const status = random(headlines);
-	client.post('statuses/update', {status: status},  function(error, tweet, response) {
+	const status = random(headlines);
+	client.post('statuses/update', {status: status}, (error) => {
 		if(error) {
-            console.error(chalk.red(`✘ Post failed`))
-            console.error(error);
-            console.error(headlines);
-            throw error;
-        }
-        else {
-            console.info(chalk.green(`✔ Posted: ${status}`))
-        }
+			console.error(chalk.red('✘ Post failed'));
+			console.error(error);
+			console.error(headlines);
+			throw error;
+		}
+		else {
+			console.info(chalk.green(`✔ Posted: ${status}`));
+		}
 	});
 });
