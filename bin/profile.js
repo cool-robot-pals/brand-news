@@ -26,14 +26,6 @@ const exported = [
 	path.resolve(__dirname,'..','build','cover.png'),
 ];
 
-let complete = 0;
-const completeAndCheck = () => {
-	complete++;
-	if(complete >= 3) {
-		console.info(chalk.green('✔ Updated profile colors'));
-	}
-};
-
 colorGetter().then(colors => {
 
 	files.map(file => {
@@ -43,40 +35,28 @@ colorGetter().then(colors => {
 		fs.writeFileSync(file, content);
 	});
 
-
 	svg_to_png.convert(files, path.resolve(__dirname,'..','build'),{
 		compress: true,
 	}).then(()=>{
 
-		client.post('account/update_profile_image.json',{
-			'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
-		},(err)=>{
-			if(err) {
-				console.error(err);
-				throw err;
-			} else {
-				completeAndCheck();
-			}
-		});
-		client.post('account/update_profile_banner.json',{
-			'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
-		},(err)=>{
-			if(err) {
-				console.error(err);
-				throw err;
-			} else {
-				completeAndCheck();
-			}
-		});
-		client.post('account/update_profile.json',{
-			'profile_link_color': colors.color
-		},(err)=>{
-			if(err) {
-				console.error(err);
-				throw err;
-			} else {
-				completeAndCheck();
-			}
+		Promise.all([
+			client.post('account/update_profile_image.json',{
+				'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
+			}),
+			client.post('account/update_profile_banner.json',{
+				'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
+			}),
+			client.post('account/update_profile.json',{
+				'profile_link_color': colors.color
+			}),
+		])
+		.then(() => {
+			console.info(chalk.green('✔ Updated profile colors'));
+		})
+		.catch(err=>{
+			console.error(chalk.red('✘ Updating profile colors failed'));
+			console.error(err);
+			throw err;
 		});
 
 	});
