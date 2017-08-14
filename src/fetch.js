@@ -17,6 +17,10 @@ const sources = [
 	'http://www.kerrang.com/feed/',
 	'https://www.citylab.com/feeds/posts/',
 ];
+const keepItLightHearted = [
+	'kill',
+	'murder'
+];
 
 const fetchPosts = () => {
 
@@ -28,6 +32,16 @@ const fetchPosts = () => {
 
 			if (err) uncool(err);
 			let headlines = [];
+
+			articles.filter(article => {
+				let okay = true;
+				keepItLightHearted.map(word => {
+					if(article.title.indexOf(word) !== -1) {
+						okay = false;
+					}
+				});
+				return okay;
+			});
 
 			articles.map(article => {
 				let replacer = random(article.title.indexOf('?') > 1?questionReplacers:replacers);
