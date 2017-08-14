@@ -16,6 +16,7 @@ const sources = [
 	'http://www.kerrang.com/feed/',
 	'https://www.citylab.com/feeds/posts/',
 	'http://munchies.vice.com/en_uk/rss',
+	'https://theoutline.com/feeds/recent.rss',
 ];
 const keepItLightHearted = [
 	'kill',
