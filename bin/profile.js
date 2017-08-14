@@ -69,7 +69,7 @@ colorGetter().then(colors => {
 			}
 		});
 		client.post('account/update_profile.json',{
-			'profile_link_color': colors.dark
+			'profile_link_color': colors.color
 		},(err)=>{
 			if(err) {
 				console.error(err);
