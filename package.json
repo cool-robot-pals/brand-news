@@ -4,7 +4,7 @@
   "description": "bad twitter bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "post": "node post.js"
   },
   "author": "Lau mayhem",
   "license": "ISC",
