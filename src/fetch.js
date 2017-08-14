@@ -13,7 +13,8 @@ const sources = [
 	'http://rss.cnn.com/rss/edition.rss',
 	'http://www.vice.com/en_us/rss',
 	'https://www.vox.com/rss/index.xml',
-	'http://waypoint.vice.com/en_us/rss'
+	'http://noisey.vice.com/en_us/rss',
+    'http://www.kerrang.com/feed/',
 ];
 
 const fetch = () => {
@@ -32,8 +33,8 @@ const fetch = () => {
 
 				headlines.push(
 					replacer.replace('$1',toTitleCase(article.title)) +
-                    ' '	+
-                    article.link
+																				' '	+
+																				article.link
 				);
 			});
 
