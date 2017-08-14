@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "feed-read": "0.0.1",
+    "to-title-case": "^1.0.0",
     "twitter": "^1.7.1"
   }
 }
