@@ -15,6 +15,7 @@ const sources = [
 	'https://www.vox.com/rss/index.xml',
 	'http://noisey.vice.com/en_us/rss',
     'http://www.kerrang.com/feed/',
+    'https://www.citylab.com/feeds/posts/',
 ];
 
 const fetchPosts = () => {
