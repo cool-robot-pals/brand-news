@@ -4,12 +4,17 @@
   "description": "bad twitter bot",
   "main": "index.js",
   "scripts": {
-    "post": "node post.js"
+    "post": "node post.js",
+    "test": "mocha",
+    "lint": "eslint"
   },
   "author": "Lau mayhem",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.1.1",
+    "eslint": "^4.4.1",
     "feed-read": "0.0.1",
+    "mocha": "^3.5.0",
     "to-title-case": "^1.0.0",
     "twitter": "^1.7.1"
   }
