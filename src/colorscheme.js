@@ -2,9 +2,9 @@ const random = require('random-item-in-array');
 const scraperjs = require('scraperjs');
 
 const getter = () => {
-	return scraperjs.StaticScraper.create('http://www.colourlovers.com/ajax/browse-trends/')
+	return scraperjs.StaticScraper.create('http://www.colourlovers.com/ajax/browse-palettes/')
 	    .scrape(function($) {
-	        return $(random($('.trend-detail-square')));
+	        return $(random($('.detail-row')));
 	    })
 	    .then(function($item) {
 			return {
