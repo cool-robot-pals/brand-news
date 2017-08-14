@@ -1,11 +1,18 @@
 const chai = require('chai');
-const colors = require('./../src/colorscheme.js');
+const colorGetter = require('./../src/colorscheme.js');
 
 describe('Basic', function() {
 
-	it('should make 4 colors',()=>{
+	it('should make 4 colors',done=>{
 
-		chai.expect(Object.keys(colors).length).to.equal(2);
+		colorGetter.then(colors=>{
+			try {
+				chai.expect(Object.keys(colors).length).to.equal(2);
+				done();
+			} catch(e) {
+				done(e);
+			}
+		})
 
 	});
 
