@@ -1,7 +1,6 @@
 const feed = require('feed-read');
 const toTitleCase = require('to-title-case');
-
-const random = (items) => items[Math.floor(Math.random()*items.length)];
+const random = require('random-item-in-array');
 
 const replacers = [
 	'$1, and That’s a Big Opportunity for Brands'
@@ -16,7 +15,7 @@ const sources = [
 	'http://kotaku.com/rss',
 	'http://www.kerrang.com/feed/',
 	'https://www.citylab.com/feeds/posts/',
-    'http://munchies.vice.com/en_uk/rss',
+	'http://munchies.vice.com/en_uk/rss',
 ];
 const keepItLightHearted = [
 	'kill',

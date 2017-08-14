@@ -1,7 +1,7 @@
 /*eslint no-console:0 */
 
-const fetchPosts = require('./src/fetch.js');
-const env = require('./env.js');
+const fetchPosts = require('./../src/fetch.js');
+const env = require('./../env.js');
 const Twitter = require('twitter');
 const chalk = require('chalk');
 
