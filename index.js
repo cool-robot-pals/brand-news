@@ -11,7 +11,7 @@ const fetch = edition => {
             let headlines = [];
 
             articles.map(article => {
-                headlines.push(`${article.title}, and That’s a Big Opportunity for Brands ${article.link}`);
+                headlines.push(`${article.title}, and that’s a big opportunity for brands ${article.link}`);
             })
 
             cool(headlines);
