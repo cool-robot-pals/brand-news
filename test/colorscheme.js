@@ -5,14 +5,14 @@ describe('Basic', function() {
 
 	it('should make 4 colors',done=>{
 
-		colorGetter.then(colors=>{
+		colorGetter().then(colors=>{
 			try {
 				chai.expect(Object.keys(colors).length).to.equal(2);
 				done();
 			} catch(e) {
 				done(e);
 			}
-		})
+		});
 
 	});
 
