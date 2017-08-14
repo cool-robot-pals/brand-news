@@ -39,21 +39,22 @@ colorGetter().then(colors => {
 		compress: true,
 	}).then(()=>{
 
-		Promise.all([
-			client.post('account/update_profile_image.json',{
-				'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
-			}),
-			client.post('account/update_profile_banner.json',{
-				'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
-			}),
-			client.post('account/update_profile.json',{
-				'profile_link_color': colors.color
-			}),
-		])
-		.then(() => {
+		Promise.all(
+			[
+				client.post('account/update_profile_image.json',{
+					'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
+				}),
+				client.post('account/update_profile_banner.json',{
+					'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
+				}),
+				client.post('account/update_profile.json',{
+					'profile_link_color': colors.color
+				}),
+			]
+		).then(() => {
 			console.info(chalk.green('✔ Updated profile colors'));
-		})
-		.catch(err=>{
+		}
+		).catch(err=>{
 			console.error(chalk.red('✘ Updating profile colors failed'));
 			console.error(err);
 			throw err;

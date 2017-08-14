@@ -12,12 +12,9 @@
   "author": "Lau mayhem",
   "license": "ISC",
   "dependencies": {
-    "base-64": "^0.1.0",
     "base64-img": "^1.0.3",
-    "btoa": "^1.1.2",
     "chai": "^4.1.1",
     "chalk": "^2.1.0",
-    "color-scheme": "^1.0.0",
     "eslint": "^4.4.1",
     "feed-read": "0.0.1",
     "mocha": "^3.5.0",
