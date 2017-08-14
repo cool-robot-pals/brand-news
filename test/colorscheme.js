@@ -5,7 +5,7 @@ describe('Basic', function() {
 
 	it('should make 4 colors',()=>{
 
-		chai.expect(Object.keys(colors).length).to.equal(4);
+		chai.expect(Object.keys(colors).length).to.equal(2);
 
 	});
 
