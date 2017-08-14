@@ -31,7 +31,10 @@ const fetchPosts = () => {
 
 		feed(edition, (err, articles) => {
 
-			if (err) uncool(err);
+			if (err) {
+				console.error(edition);
+				uncool(err);
+			}
 			let headlines = [];
 
 			articles.filter(article => {

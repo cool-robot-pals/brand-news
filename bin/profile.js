@@ -4,7 +4,7 @@ const svg_to_png = require('svg-to-png');
 const base64Img = require('base64-img');
 const path = require('path');
 const fs = require('fs');
-const colors = require('./../src/colorscheme.js');
+const colorGetter = require('./../src/colorscheme.js');
 const Twitter = require('twitter');
 const env = require('./../env.js');
 const chalk = require('chalk');
@@ -21,13 +21,6 @@ const files = [
 	path.resolve(__dirname,'..','assets','cover.svg'),
 ];
 
-files.map(file => {
-	const original = file.replace('.svg','-original.svg');
-	let content = fs.readFileSync(original,'utf8');
-	content = content.replace(/#000000/g,'#'+colors.color).replace(/#FFFFFF/g,'#'+colors.complement);
-	fs.writeFileSync(file, content);
-});
-
 const exported = [
 	path.resolve(__dirname,'..','build','avatar.png'),
 	path.resolve(__dirname,'..','build','cover.png'),
@@ -41,39 +34,51 @@ const completeAndCheck = () => {
 	}
 };
 
-svg_to_png.convert(files, path.resolve(__dirname,'..','build'),{
-	compress: true,
-}).then(()=>{
+colorGetter().then(colors => {
 
-	client.post('account/update_profile_image.json',{
-		'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
-	},(err)=>{
-		if(err) {
-			console.error(err);
-			throw err;
-		} else {
-			completeAndCheck();
-		}
+	files.map(file => {
+		const original = file.replace('.svg','-original.svg');
+		let content = fs.readFileSync(original,'utf8');
+		content = content.replace(/#000000/g,'#'+colors.color).replace(/#FFFFFF/g,'#'+colors.complement);
+		fs.writeFileSync(file, content);
 	});
-	client.post('account/update_profile_banner.json',{
-		'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
-	},(err)=>{
-		if(err) {
-			console.error(err);
-			throw err;
-		} else {
-			completeAndCheck();
-		}
-	});
-	client.post('account/update_profile.json',{
-		'profile_link_color': colors.dark
-	},(err)=>{
-		if(err) {
-			console.error(err);
-			throw err;
-		} else {
-			completeAndCheck();
-		}
+
+
+	svg_to_png.convert(files, path.resolve(__dirname,'..','build'),{
+		compress: true,
+	}).then(()=>{
+
+		client.post('account/update_profile_image.json',{
+			'image': base64Img.base64Sync(exported[0]).replace('data:image/png;base64,','')
+		},(err)=>{
+			if(err) {
+				console.error(err);
+				throw err;
+			} else {
+				completeAndCheck();
+			}
+		});
+		client.post('account/update_profile_banner.json',{
+			'banner': base64Img.base64Sync(exported[1]).replace('data:image/png;base64,','')
+		},(err)=>{
+			if(err) {
+				console.error(err);
+				throw err;
+			} else {
+				completeAndCheck();
+			}
+		});
+		client.post('account/update_profile.json',{
+			'profile_link_color': colors.color
+		},(err)=>{
+			if(err) {
+				console.error(err);
+				throw err;
+			} else {
+				completeAndCheck();
+			}
+		});
+
 	});
 
 });
