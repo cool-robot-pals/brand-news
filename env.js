@@ -1,8 +1,8 @@
 module.exports = {
-	twitterConsumerKey: process.env.MC_TWITTER_APPK,
-	twitterConsumerSecret: process.env.MC_TWITTER_APPS,
-	twitterAccess: process.env.MC_TWITTER_AT,
-	twitterSecret: process.env.MC_TWITTER_S,
+	twitterConsumerKey: 'tH6QOtcxPNu0BHVydIBOdWR89',
+	twitterConsumerSecret: 'dgfHhO1z2JzOqUeA1x7MNjTCDOeg5kCIrrxWr3tIKTo2Z935X3',
+	twitterAccess: '897039944920817664-33pK8q1mfmorGSBf2bqhpOevoKI5EZy',
+	twitterSecret: '8tMvjKCqtErXYxFL48Tjl4cRYp7mwEQClD08xMb2t3e0G',
 };
 
 /*
