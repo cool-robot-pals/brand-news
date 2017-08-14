@@ -22,6 +22,7 @@
     "feed-read": "0.0.1",
     "mocha": "^3.5.0",
     "random-item-in-array": "^1.0.0",
+    "scraperjs": "^1.2.0",
     "svg-to-png": "^3.1.2",
     "to-title-case": "^1.0.0",
     "twitter": "^1.7.1"

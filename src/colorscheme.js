@@ -22,4 +22,10 @@ if(Math.random() > .5) {
 	exportable.complement = exportable.light;
 }
 
-module.exports = exportable;
+
+const getter = () => {
+	return new Promise((yay,nay)=>{
+		yay(exportable);
+	})
+});
+module.exports = getter;
