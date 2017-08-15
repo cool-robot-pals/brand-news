@@ -13,7 +13,7 @@ const sources = [
 	'http://www.vice.com/en_us/rss',
 	'https://www.vox.com/rss/index.xml',
 	'http://kotaku.com/rss',
-	'http://www.kerrang.com/feed/',
+	'www.altpress.com/site/rss/',
 	'https://www.citylab.com/feeds/posts/',
 	'http://munchies.vice.com/en_uk/rss',
 	'https://theoutline.com/feeds/recent.rss',
