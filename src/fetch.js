@@ -16,7 +16,7 @@ const sources = [
 	'www.altpress.com/site/rss/',
 	'https://www.citylab.com/feeds/posts/',
 	'http://munchies.vice.com/en_uk/rss',
-	'https://www.theguardian.com/uk/commentisfree'
+	'https://www.theguardian.com/uk/commentisfree',
 	'https://theoutline.com/feeds/recent.rss',
 ];
 const keepItLightHearted = [
