@@ -50,14 +50,17 @@ const fetchPosts = () => {
 
 			articles.map(article => {
 
-				[',','.',';'].map(token => {
+				[',','.',';','|'].map(token => {
 					article.title = article.title.split(token)[0];
 				});
-
+				
+				article.title = article.title.trim();
+				article.title = toTitleCase(article.title);
+					
 				let replacer = random(article.title.indexOf('?') > 1?questionReplacers:replacers);
 
 				headlines.push(
-					replacer.replace('$1',toTitleCase(article.title)) + ' ' + article.link
+					replacer.replace('$1',article.title) + ' ' + article.link
 				);
 			});
 
