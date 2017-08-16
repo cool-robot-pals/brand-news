@@ -4,6 +4,8 @@ const fetchPosts = require('./../src/fetch.js');
 const testUntil = 4;
 
 describe('Basic', function() {
+	
+	this.timeout(10000);
 
 	it('should fetch 4 posts',(done)=>{
 
