@@ -15,6 +15,7 @@ describe('Basic', function() {
 				testedPosts++;
 				testedPosts >= testUntil ? done() : null;
 			} catch(e) {
+				console.error(e);
 				done(e);
 			}
 		};
