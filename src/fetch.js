@@ -16,6 +16,7 @@ const sources = [
 	'http://noisey.vice.com/en_uk/rss',
 	'https://www.citylab.com/feeds/posts/',
 	'http://munchies.vice.com/en_uk/rss',
+	'http://broadly.vice.com/en_us/rss',
 	'https://www.theguardian.com/uk/commentisfree/rss',
 	'https://theoutline.com/feeds/recent.rss',
 ];
