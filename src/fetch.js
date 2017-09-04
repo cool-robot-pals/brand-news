@@ -51,7 +51,7 @@ const fetchPosts = () => {
 
 			articles.map(article => {
 
-				[',','.',';','|'].map(token => {
+				[',','.',';','|','–','('].map(token => {
 					article.title = article.title.split(token)[0];
 				});
 				
