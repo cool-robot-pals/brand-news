@@ -9,15 +9,14 @@ const questionReplacers = [
 	'$1 And Why That’s a Big Opportunity for Brands'
 ];
 const sources = [
-	'http://rss.cnn.com/rss/edition.rss',
-	'http://www.vice.com/en_us/rss',
-	'https://www.vox.com/rss/index.xml',
 	'http://kotaku.com/rss',
+	'http://feeds.feedburner.com/Destructoid',
 	'http://noisey.vice.com/en_uk/rss',
-	'https://www.citylab.com/feeds/posts/',
 	'http://munchies.vice.com/en_uk/rss',
 	'http://broadly.vice.com/en_us/rss',
-	'https://www.theguardian.com/uk/commentisfree/rss',
+	'http://www.vice.com/en_us/rss',
+	'http://rss.cnn.com/rss/edition.rss',
+	'https://www.vox.com/rss/index.xml',
 	'https://theoutline.com/feeds/recent.rss',
 ];
 const keepItLightHearted = [
